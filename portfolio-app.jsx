@@ -77,11 +77,11 @@ function Hero() {
       </div>
 
       {/* main title */}
-      <div className="hero-title relative z-10 min-h-screen flex flex-col justify-between pt-24 md:pt-28 pb-12 md:pb-14 px-6 md:px-12">
-        <div>
+      <div className="hero-title relative z-10 h-screen flex flex-col pt-24 md:pt-28 pb-12 md:pb-14 px-6 md:px-12">
+        <div className="flex-1 flex flex-col justify-center">
         <p className="eyebrow opacity-60 mb-6 reveal-mask"><span className="reveal-line" style={{transform:'translateY(110%)', display:'inline-block'}}>↳ Portfolio — Tom Roger · 2026</span></p>
 
-        <h1 className="display text-[18vw] md:text-[16vw] leading-[0.84] tracking-ultra">
+        <h1 className="display leading-[0.84] tracking-ultra" style={{fontSize:'clamp(2.5rem, 16vw, 13vh)'}}>
           <span className="block reveal-mask">
             <span className="hero-char inline-block" style={{transform:'translateY(110%)'}}>B</span>
             <span className="hero-char inline-block" style={{transform:'translateY(110%)'}}>u</span>
