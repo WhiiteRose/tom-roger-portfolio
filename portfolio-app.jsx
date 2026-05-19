@@ -77,7 +77,8 @@ function Hero() {
       </div>
 
       {/* main title */}
-      <div className="hero-title relative z-10 min-h-screen flex flex-col justify-center px-6 md:px-12">
+      <div className="hero-title relative z-10 min-h-screen flex flex-col justify-between pt-24 md:pt-28 pb-12 md:pb-14 px-6 md:px-12">
+        <div>
         <p className="eyebrow opacity-60 mb-6 reveal-mask"><span className="reveal-line" style={{transform:'translateY(110%)', display:'inline-block'}}>↳ Portfolio — Tom Roger · 2026</span></p>
 
         <h1 className="display text-[18vw] md:text-[16vw] leading-[0.84] tracking-ultra">
@@ -118,8 +119,9 @@ function Hero() {
             <span className="hero-char inline-block" style={{transform:'translateY(110%)'}}>.</span>
           </span>
         </h1>
+        </div>
 
-        <div className="mt-10 md:mt-14 grid grid-cols-12 gap-6 items-end">
+        <div className="grid grid-cols-12 gap-6 items-end">
           <div className="col-span-12 md:col-span-6">
             <p className="font-serif text-2xl md:text-3xl leading-snug text-pretty reveal-mask">
               <span className="hero-line inline-block" style={{transform:'translateY(110%)'}}>
