@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CV — Tom Roger</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:'#0A0908', coal:'#141312', smoke:'#1F1D1B', ash:'#2A2725',
+          stone:'#4A4541', fog:'#8A8580', bone:'#C8C2BA', paper:'#EFEAE2',
+          milk:'#F5F2EC', red:'#E5383B', rust:'#B71D21', ember:'#FF4D4F',
+        },
+        fontFamily: {
+          sans:['"Inter Tight"','system-ui','sans-serif'],
+          serif:['"Instrument Serif"','Georgia','serif'],
+          mono:['"JetBrains Mono"','ui-monospace','monospace'],
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html, body { background:#F5F2EC; }
+  body { font-family:'Inter Tight', sans-serif; -webkit-font-smoothing: antialiased; color:#0A0908; }
+  .display { font-family:'Inter Tight', sans-serif; font-weight:800; letter-spacing:-0.055em; line-height:0.86; }
+  .display-italic { font-family:'Instrument Serif', serif; font-style:italic; font-weight:400; letter-spacing:-0.02em; line-height:0.92; }
+  .eyebrow { font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; }
+  .mono { font-family:'JetBrains Mono', monospace; }
+  .hr-ink { border-color: rgba(10,9,8,0.16); }
+  .dot { width:6px; height:6px; border-radius:9999px; background:#E5383B; display:inline-block; }
+  .corner { position:absolute; width:14px; height:14px; }
+  .corner.tl { top:0; left:0; border-left:1px solid rgba(10,9,8,0.30); border-top:1px solid rgba(10,9,8,0.30); }
+  .corner.tr { top:0; right:0; border-right:1px solid rgba(10,9,8,0.30); border-top:1px solid rgba(10,9,8,0.30); }
+  .corner.bl { bottom:0; left:0; border-left:1px solid rgba(10,9,8,0.30); border-bottom:1px solid rgba(10,9,8,0.30); }
+  .corner.br { bottom:0; right:0; border-right:1px solid rgba(10,9,8,0.30); border-bottom:1px solid rgba(10,9,8,0.30); }
+
+  /* page wrapper — A4 dims at 96dpi (≈ 210x297 mm) but flexible on screen */
+  .page {
+    width: 100%;
+    max-width: 920px;
+    min-height: 1300px;
+    margin: 0 auto;
+    background: #F5F2EC;
+    padding: 56px 56px 48px;
+    position: relative;
+  }
+  ::selection { background:#E5383B; color:#F5F2EC; }
+
+  /* Toolbar — hidden in print */
+  .toolbar { position: sticky; top:0; z-index:50; }
+  @media print {
+    @page { size: A4; margin: 12mm 14mm 12mm 14mm; }
+    html, body { background:#F5F2EC !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .toolbar, .no-print { display: none !important; }
+    .page { margin:0; padding:0; max-width:none; min-height:0; box-shadow:none; }
+    a { color: inherit; text-decoration: none; }
+  }
+
+  /* skill chip */
+  .chip {
+    display:inline-flex; align-items:center;
+    border:1px solid rgba(10,9,8,0.20);
+    border-radius:9999px;
+    padding:3px 10px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:0.14em; text-transform:uppercase;
+    background: rgba(255,255,255,0.3);
+  }
+
+  /* timeline dot */
+  .timeline-row { position:relative; padding-left: 22px; }
+  .timeline-row::before {
+    content:''; position:absolute; left:0; top:9px;
+    width:8px; height:8px; border-radius:9999px;
+    background: #0A0908;
+    box-shadow: 0 0 0 4px #F5F2EC, 0 0 0 5px rgba(10,9,8,0.18);
+  }
+  .timeline-row.is-red::before { background:#E5383B; }
+</style>
+</head>
+<body class="min-h-screen">
+
+<!-- Print toolbar (screen only) -->
+<div class="toolbar no-print bg-ink text-milk">
+  <div class="max-w-[920px] mx-auto px-6 py-3 flex items-center justify-between text-[12px] font-mono tracking-[0.16em] uppercase">
+    <div class="flex items-center gap-3">
+      <span class="dot"></span>
+      <span>CV — Tom Roger</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="Portfolio.html" class="opacity-70 hover:opacity-100 transition">← Portfolio</a>
+      <button onclick="window.print()" class="bg-red rounded-full px-4 py-2 hover:bg-rust transition">Download · Print PDF</button>
+    </div>
+  </div>
+</div>
+
+<main class="page">
+  <span class="corner tl"></span>
+  <span class="corner tr"></span>
+  <span class="corner bl"></span>
+  <span class="corner br"></span>
+
+  <!-- HEADER -->
+  <header class="grid grid-cols-12 gap-6 pb-8 border-b hr-ink">
+    <div class="col-span-12 md:col-span-8">
+      <div class="eyebrow text-stone mb-3 flex items-center gap-3">
+        <span class="dot"></span>
+        <span>Curriculum Vitae — Vol. 26</span>
+      </div>
+      <h1 class="display text-[14vw] md:text-[88px] leading-[0.86]">
+        Tom <span class="display-italic text-red">Roger</span><span>.</span>
+      </h1>
+      <p class="mt-4 text-[15px] md:text-[17px] leading-snug max-w-[52ch] text-ash">
+        Développeur web fullstack <em class="display-italic">&amp;</em> expert en cybersécurité —
+        actuellement en stage de fin d'études chez <strong>Thales</strong>.
+      </p>
+    </div>
+    <aside class="col-span-12 md:col-span-4 md:text-right space-y-2 mono text-[11px] tracking-[0.04em] text-ash">
+      <div>
+        <div class="eyebrow opacity-50">Email</div>
+        <a href="mailto:tomroger.emailpro@gmail.com">tomroger.emailpro@gmail.com</a>
+      </div>
+      <div>
+        <div class="eyebrow opacity-50">Phone</div>
+        <a href="tel:+33624033684">+33 6 24 03 36 84</a>
+      </div>
+      <div>
+        <div class="eyebrow opacity-50">Based</div>
+        Paris, Île-de-France
+      </div>
+      <div>
+        <div class="eyebrow opacity-50">Status</div>
+        Seeking end-of-study role · 2026
+      </div>
+    </aside>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="grid grid-cols-12 gap-6 py-8 border-b hr-ink">
+    <div class="col-span-12 md:col-span-3">
+      <p class="eyebrow"><span class="text-red">●</span> N° 001 — About</p>
+    </div>
+    <div class="col-span-12 md:col-span-9">
+      <p class="text-[15px] leading-[1.55] text-ink max-w-[64ch]">
+        Développeur web fullstack (React, TypeScript, Node.js) avec une spécialisation forte
+        en cybersécurité. Certifié en sécurité informatique, formé aux domaines du
+        <em class="display-italic">pentest, audit, forensics, red team et blue team</em> lors
+        d'un échange académique en Belgique. Actuellement en stage de fin d'études chez Thales,
+        en 5ᵉ année à Epitech Lyon.
+      </p>
+      <div class="mt-5 flex flex-wrap items-center gap-2">
+        <span class="chip">Status — Seeking end-of-study role · 2026</span>
+        <span class="chip">FR Native</span>
+        <span class="chip">EN Professional</span>
+        <span class="chip">Mobile · France · Remote-friendly</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="grid grid-cols-12 gap-6 py-8 border-b hr-ink">
+    <div class="col-span-12 md:col-span-3">
+      <p class="eyebrow"><span class="text-red">●</span> N° 002 — Experience</p>
+    </div>
+    <div class="col-span-12 md:col-span-9 space-y-7">
+
+      <!-- THALES -->
+      <article class="timeline-row is-red">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="display text-[28px] leading-[1]">Développeur Web <span class="text-stone display-italic font-normal">— Thales</span></h3>
+          <span class="mono text-[10px] tracking-[0.18em] uppercase text-stone shrink-0">2024 — Present</span>
+        </div>
+        <p class="eyebrow text-stone mt-1">Stage de fin d'études · Paris</p>
+        <ul class="mt-3 space-y-1.5 text-[14px] leading-snug text-ash max-w-[68ch]">
+          <li>— Développement web fullstack : design et implémentation de features sur la plateforme interne.</li>
+          <li>— Frontend React / TypeScript : composants réutilisables, responsive design.</li>
+          <li>— Intégration sécurité : bonnes pratiques en développement, code reviews orientées sécurité.</li>
+          <li>— Collaboration en équipe, documentation technique, respect des standards entreprise.</li>
+        </ul>
+      </article>
+
+      <!-- TAKER -->
+      <article class="timeline-row">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="display text-[28px] leading-[1]">Frontend Developer <span class="text-stone display-italic font-normal">— Taker</span></h3>
+          <span class="mono text-[10px] tracking-[0.18em] uppercase text-stone shrink-0">2024 — 2025</span>
+        </div>
+        <p class="eyebrow text-stone mt-1">Freelance · Remote</p>
+        <ul class="mt-3 space-y-1.5 text-[14px] leading-snug text-ash max-w-[68ch]">
+          <li>— Design et développement : maquettes Figma → interfaces React / TypeScript performantes.</li>
+          <li>— Composants réutilisables, design system, accessibilité WCAG, optimisation perf.</li>
+          <li>— Suivi métier : intégration d'API, KPIs (conversion, temps de chargement), itérations rapides.</li>
+        </ul>
+      </article>
+
+      <!-- PIWIO -->
+      <article class="timeline-row">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="display text-[28px] leading-[1]">Développeur Web &amp; Mobile <span class="text-stone display-italic font-normal">— Piwio</span></h3>
+          <span class="mono text-[10px] tracking-[0.18em] uppercase text-stone shrink-0">2024 · 6 months</span>
+        </div>
+        <p class="eyebrow text-stone mt-1">Stage</p>
+        <ul class="mt-3 space-y-1.5 text-[14px] leading-snug text-ash max-w-[68ch]">
+          <li>— Développement React et Flutter : transformation de maquettes Figma en interfaces fiables.</li>
+          <li>— UX / UI : amélioration des parcours utilisateurs, navigation, cohérence des interfaces.</li>
+          <li>— Design system : création de composants réutilisables et documentation.</li>
+        </ul>
+      </article>
+
+      <!-- SOPRA -->
+      <article class="timeline-row">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="display text-[28px] leading-[1]">Développeur Fullstack <span class="text-stone display-italic font-normal">— Sopra Steria</span></h3>
+          <span class="mono text-[10px] tracking-[0.18em] uppercase text-stone shrink-0">2023 · 6 months</span>
+        </div>
+        <p class="eyebrow text-stone mt-1">Stage</p>
+        <ul class="mt-3 space-y-1.5 text-[14px] leading-snug text-ash max-w-[68ch]">
+          <li>— Développement web : Angular, SQL, intégration UI, appels API, code reviews et documentation.</li>
+          <li>— Sécurité : bonnes pratiques (authentification, validation, sanitization).</li>
+          <li>— Tests : écriture de tests unitaires et d'intégration.</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="grid grid-cols-12 gap-6 py-8 border-b hr-ink">
+    <div class="col-span-12 md:col-span-3">
+      <p class="eyebrow"><span class="text-red">●</span> N° 003 — Education</p>
+    </div>
+    <div class="col-span-12 md:col-span-9 space-y-6">
+
+      <article class="timeline-row is-red">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="display text-[22px] leading-[1]">Master — Expert en Technologies de l'Information</h3>
+          <span class="mono text-[10px] tracking-[0.18em] uppercase text-stone shrink-0">2021 — 2026</span>
+        </div>
+        <p class="eyebrow text-stone mt-1">Epitech · Lyon</p>
+      </article>
+
+      <article class="timeline-row">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="display text-[22px] leading-[1]">Spécialisation Cybersécurité <span class="display-italic text-stone font-normal">— Échange académique</span></h3>
+          <span class="mono text-[10px] tracking-[0.18em] uppercase text-stone shrink-0">2023 — 2024</span>
+        </div>
+        <p class="eyebrow text-stone mt-1">4ᵉ année · Belgique · Immersion complète en sécurité informatique</p>
+      </article>
+
+      <article class="timeline-row">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="display text-[22px] leading-[1]">Certification Cybersécurité</h3>
+          <span class="mono text-[10px] tracking-[0.18em] uppercase text-stone shrink-0">2024</span>
+        </div>
+        <p class="eyebrow text-stone mt-1">Epitech · Lyon</p>
+      </article>
+
+      <article class="timeline-row">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="display text-[22px] leading-[1]">Baccalauréat <span class="display-italic text-stone font-normal">— NSI, Mathématiques, Physique</span></h3>
+          <span class="mono text-[10px] tracking-[0.18em] uppercase text-stone shrink-0">2021</span>
+        </div>
+        <p class="eyebrow text-stone mt-1">Saint-Thomas d'Aquin</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="grid grid-cols-12 gap-6 py-8 border-b hr-ink">
+    <div class="col-span-12 md:col-span-3">
+      <p class="eyebrow"><span class="text-red">●</span> N° 004 — Skills</p>
+    </div>
+    <div class="col-span-12 md:col-span-9 space-y-5">
+
+      <div class="grid grid-cols-12 gap-3 items-start">
+        <div class="col-span-4 eyebrow text-stone pt-1">Languages</div>
+        <div class="col-span-8 flex flex-wrap gap-1.5">
+          <span class="chip">TypeScript</span><span class="chip">JavaScript</span>
+          <span class="chip">Dart</span><span class="chip">Python</span>
+          <span class="chip">SQL</span><span class="chip">C</span>
+          <span class="chip">C++</span><span class="chip">Haskell</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-3 items-start">
+        <div class="col-span-4 eyebrow text-stone pt-1">Frameworks</div>
+        <div class="col-span-8 flex flex-wrap gap-1.5">
+          <span class="chip">React</span><span class="chip">Next.js</span>
+          <span class="chip">Angular</span><span class="chip">Node.js / Express</span>
+          <span class="chip">Flutter</span><span class="chip">PyTorch</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-3 items-start">
+        <div class="col-span-4 eyebrow text-stone pt-1">Frontend craft</div>
+        <div class="col-span-8 flex flex-wrap gap-1.5">
+          <span class="chip">Figma → Code</span><span class="chip">Design Systems</span>
+          <span class="chip">Responsive</span><span class="chip">WCAG Accessibility</span>
+          <span class="chip">GSAP · Motion</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-3 items-start">
+        <div class="col-span-4 eyebrow text-stone pt-1">Tooling</div>
+        <div class="col-span-8 flex flex-wrap gap-1.5">
+          <span class="chip">Git / GitHub</span><span class="chip">Docker</span>
+          <span class="chip">CI / CD</span><span class="chip">Linux</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-3 items-start pt-3 border-t hr-ink">
+        <div class="col-span-4 eyebrow text-red pt-1">Cybersecurity</div>
+        <div class="col-span-8 flex flex-wrap gap-1.5">
+          <span class="chip">Pentest</span><span class="chip">Audit sécurité</span>
+          <span class="chip">Forensics</span><span class="chip">Incident response</span>
+          <span class="chip">Red Team</span><span class="chip">Blue Team</span>
+          <span class="chip">Threat Hunting</span><span class="chip">OWASP Top 10</span>
+          <span class="chip">Sécurité applicative</span><span class="chip">Cryptographie</span>
+          <span class="chip">Sécurité réseau</span><span class="chip">Hardening</span>
+          <span class="chip">Secure coding</span><span class="chip">Vulnerability management</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-3 items-start">
+        <div class="col-span-4 eyebrow text-stone pt-1">Languages spoken</div>
+        <div class="col-span-8 flex flex-wrap gap-1.5">
+          <span class="chip">Français — Natif</span>
+          <span class="chip">Anglais — Professionnel</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="pt-6 flex flex-wrap items-center justify-between gap-3 mono text-[10px] tracking-[0.16em] uppercase text-stone">
+    <div class="flex items-center gap-3">
+      <span class="dot"></span>
+      <span>Tom Roger · CV · 2026</span>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="https://github.com/WhiiteRose" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/tom-roger-2a1a23274" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      <a href="mailto:tomroger.emailpro@gmail.com">Email ↗</a>
+    </div>
+    <div>Page 01 / 01</div>
+  </footer>
+</main>
+
+</body>
+</html>
