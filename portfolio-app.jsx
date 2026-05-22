@@ -331,7 +331,7 @@ function About() {
    ============================================================ */
 const PROJECTS = [
   { n:'01', title:'Zentry',    client:'Personal · Landing page',      year:'2025', tags:['React','GSAP','Tailwind'],            desc:'Cinematic landing page exploration with video transitions and a HUD-driven navigation system.',           ratio:'16/10', src:'images/zentry-selected.png', repo:'https://github.com/WhiiteRose/Zentry' },
-  { n:'02', title:'3Drobot',   client:'Personal · WebGL',             year:'2024', tags:['React','Spline','Tailwind','Vite'],   desc:'Interactive 3D scene built with Spline & AOS — exploring product-style web 3D in React.',                ratio:'4/5',   src:'images/3dRobot.png', repo:'https://github.com/WhiiteRose/3Drobot' },
+  { n:'02', title:'3Drobot',   client:'WebGL',                         year:'2024', tags:['React','Spline'],   desc:'Interactive 3D scene built with Spline & AOS — exploring product-style web 3D in React.',                ratio:'4/5',   src:'images/3dRobot.png', repo:'https://github.com/WhiiteRose/3Drobot' },
   { n:'03', title:'Apple',     client:'Personal · Product page',      year:'2025', tags:['R3F','Three.js','GSAP','Tailwind 4'], desc:'Scroll-animated 3D product page — full timeline choreography around a real-time MacBook model.',          ratio:'16/10', src:'images/Apple.png', repo:'https://github.com/WhiiteRose/Apple' },
   { n:'04', title:'NeoMovie',  client:'Personal · Fullstack',         year:'2024', tags:['React','Node.js','MongoDB','Docker'], desc:'Premium responsive movie explorer — full-stack, Dockerized, browse films, series & actors.',             ratio:'16/10', src:'images/NeoMovie.png', repo:'https://github.com/WhiiteRose/NeoMovie' },
 ];
@@ -409,23 +409,21 @@ function WorkShowcase() {
         <div className="flex-1 flex items-center overflow-hidden pl-6 md:pl-12">
           <div ref={track} className="hscroll-track gap-8 md:gap-14 items-stretch pr-24" style={{height:'70vh'}}>
             {PROJECTS.map((p) => (
-              <a key={p.n} href={p.repo} target="_blank" rel="noreferrer" className="proj-card group relative shrink-0 flex flex-col" style={{ width: p.ratio === '4/5' ? '38vh' : '120vh' }} data-cursor>
-                <div className="relative h-full">
-                  <div className="absolute inset-0">
-                    {p.src ? (
-                      <img src={p.src} alt={p.title} className="ph-cover w-full h-full object-cover" />
-                    ) : (
-                      <ImagePlaceholder
-                        ratio={p.ratio}
-                        label={`${p.title.toLowerCase()} — hero`}
-                        dim="3840 × 2160"
-                        tone="dark"
-                      />
-                    )}
-                  </div>
-                  <span className="meta-arrow absolute bottom-4 right-4 w-12 h-12 rounded-full bg-milk text-ink flex items-center justify-center">↗</span>
+              <a key={p.n} href={p.repo} target="_blank" rel="noreferrer" className="proj-card group relative shrink-0 flex flex-col" style={{ width: p.ratio === '4/5' ? '38vh' : '120vh', height: '70vh' }} data-cursor>
+                <div className="proj-media relative flex-1 min-h-0 overflow-hidden">
+                  {p.src ? (
+                    <img src={p.src} alt={p.title} className="ph-cover w-full h-full object-cover" />
+                  ) : (
+                    <ImagePlaceholder
+                      ratio={p.ratio}
+                      label={`${p.title.toLowerCase()} — hero`}
+                      dim="3840 × 2160"
+                      tone="dark"
+                    />
+                  )}
+                  <span className="selected-work-arrow absolute rounded-full bg-milk text-ink flex items-center justify-center">↗</span>
                 </div>
-                <div className="pt-5 flex items-start justify-between gap-6">
+                <div className="pt-5 shrink-0 flex items-start justify-between gap-6">
                   <div className="min-w-0">
                     <h3 className="text-2xl md:text-3xl tracking-tight font-medium">{p.title}</h3>
                     <p className="eyebrow opacity-60 mt-1">{p.client}</p>

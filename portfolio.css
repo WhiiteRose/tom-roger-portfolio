@@ -125,11 +125,23 @@ body { overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
 /* big project card hover */
 .proj-card { transition: transform 0.6s cubic-bezier(.2,.7,.2,1); }
+.proj-card .proj-media {
+  border-radius: 1.5rem;
+  clip-path: inset(0 round 1.5rem);
+  overflow: hidden;
+}
 .proj-card .ph-img > img,
 .proj-card .ph-cover { transition: transform 0.9s cubic-bezier(.2,.7,.2,1), filter 0.6s ease; }
 .proj-card:hover .ph-cover { transform: scale(1.04); }
-.proj-card .meta-arrow { transition: transform 0.5s cubic-bezier(.2,.7,.2,1); }
-.proj-card:hover .meta-arrow { transform: translate(4px,-4px); }
+.proj-card .selected-work-arrow {
+  right: clamp(1.75rem, 2.3vh, 2.25rem);
+  bottom: clamp(1.75rem, 2.3vh, 2.25rem);
+  width: 2.75rem;
+  height: 2.75rem;
+  z-index: 2;
+  box-shadow: 0 12px 28px rgba(10, 9, 8, 0.16);
+  transition: none;
+}
 
 /* eyebrow */
 .eyebrow {
