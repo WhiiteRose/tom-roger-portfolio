@@ -330,11 +330,10 @@ function About() {
    SELECTED WORK — horizontal scroll pinned section
    ============================================================ */
 const PROJECTS = [
-  { n:'01', title:'Zentry',        client:'Personal · Landing page',      year:'2025', tags:['React','GSAP','Tailwind'],            desc:'Cinematic landing page exploration with video transitions and a HUD-driven navigation system.',           ratio:'16/10', src:'images/zentry-selected.png', repo:'https://github.com/WhiiteRose/Zentry' },
-  { n:'02', title:'Politisimple',  client:'Personal · Civic tech',         year:'2025', tags:['Next.js','React','Tailwind'],         desc:'Fiche politique sourcée pour chaque personnalité — programme, votes, parcours et financement réunis en une page, sans interprétation.', ratio:'16/10', src:'images/Politisimple.png', repo:'https://politi-simple.vercel.app/' },
-  { n:'03', title:'3Drobot',       client:'WebGL',                         year:'2024', tags:['React','Spline'],   desc:'Interactive 3D scene built with Spline & AOS — exploring product-style web 3D in React.',                ratio:'4/5',   src:'images/3dRobot.png', repo:'https://github.com/WhiiteRose/3Drobot' },
-  { n:'04', title:'Apple',         client:'Personal · Product page',      year:'2025', tags:['R3F','Three.js','GSAP','Tailwind 4'], desc:'Scroll-animated 3D product page — full timeline choreography around a real-time MacBook model.',          ratio:'16/10', src:'images/Apple.png', repo:'https://github.com/WhiiteRose/Apple' },
-  { n:'05', title:'NeoMovie',      client:'Personal · Fullstack',         year:'2024', tags:['React','Node.js','MongoDB','Docker'], desc:'Premium responsive movie explorer — full-stack, Dockerized, browse films, series & actors.',             ratio:'16/10', src:'images/NeoMovie.png', repo:'https://github.com/WhiiteRose/NeoMovie' },
+  { n:'01', title:'Zentry',    client:'Personal · Landing page',      year:'2025', tags:['React','GSAP','Tailwind'],            desc:'Cinematic landing page exploration with video transitions and a HUD-driven navigation system.',           ratio:'16/10', src:'images/zentry-selected.png', repo:'https://github.com/WhiiteRose/Zentry' },
+  { n:'02', title:'3Drobot',   client:'WebGL',                         year:'2024', tags:['React','Spline'],   desc:'Interactive 3D scene built with Spline & AOS — exploring product-style web 3D in React.',                ratio:'4/5',   src:'images/3dRobot.png', repo:'https://github.com/WhiiteRose/3Drobot' },
+  { n:'03', title:'Apple',     client:'Personal · Product page',      year:'2025', tags:['R3F','Three.js','GSAP','Tailwind 4'], desc:'Scroll-animated 3D product page — full timeline choreography around a real-time MacBook model.',          ratio:'16/10', src:'images/Apple.png', repo:'https://github.com/WhiiteRose/Apple' },
+  { n:'04', title:'NeoMovie',  client:'Personal · Fullstack',         year:'2024', tags:['React','Node.js','MongoDB','Docker'], desc:'Premium responsive movie explorer — full-stack, Dockerized, browse films, series & actors.',             ratio:'16/10', src:'images/NeoMovie.png', repo:'https://github.com/WhiiteRose/NeoMovie' },
 ];
 
 function WorkShowcase() {
@@ -460,6 +459,7 @@ const INDEX_ITEMS = [
   { n:'04', title:'Splyt',      cat:'Product landing · Motion', year:'2025', repo:'https://github.com/WhiiteRose/Splyt',     hover:'images/SplytHoover.png',     caption:'Caffeinated milkshake — ScrollTrigger choreography' },
   { n:'05', title:'3Drobot',    cat:'WebGL · Spline',           year:'2024', repo:'https://github.com/WhiiteRose/3Drobot',   hover:'images/3dRobot.png',         caption:'Interactive 3D scene built in Spline & AOS' },
   { n:'06', title:'SecMe',      cat:'Mobile · Flutter · Security', year:'2025', repo:'#',                                    hover:'images/SecMeHoover.png',     caption:'Flutter mobile app — secure-by-design architecture' },
+  { n:'07', title:'Politisimple', cat:'Civic tech · Next.js',    year:'2025', repo:'https://politi-simple.vercel.app/',       hover:'images/Politisimple.png',    caption:'Fiche politique sourcée — programmes, votes, parcours, financement' },
 ];
 
 function Index() {
